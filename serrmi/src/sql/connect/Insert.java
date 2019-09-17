@@ -16,19 +16,15 @@ import sercurity.Md5;
 
 public class Insert {
 	public static void main(String[] args) throws SQLException {
-		Connection con = Msql.getConn();
-		boolean ck=Msql.check("20158032", "pppp", con);
-		System.out.println(ck);
-		ck=Msql.check("20158034", "meo nho", con);
-		System.out.println(ck);
-		con.close();
+		ins();
 	}
-	public static void ins() {
+
+	protected static void ins() {
 		File sa = new File("data.txt");
 		String s = sa.getAbsolutePath();
 		List<String> h = getText(s);
 		Connection con = Msql.getConn();
-		String sql = "INSERT IGNORE INTO user(sothe,name,pass,tk) values (?,?,?,?) ";
+		String sql = "INSERT IGNORE INTO " + Conn.table + " (sothe,name,pass,tk) values (?,?,?,?) ";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			for (String k : h) {

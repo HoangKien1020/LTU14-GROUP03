@@ -21,10 +21,21 @@ public class Msql {
 			return null;
 		}
 	}
-
+	protected static Connection getDConn() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String connectionURL = "jdbc:mysql://" + Conn.host + ":" + Conn.port + "/" ;
+			Connection conn = DriverManager.getConnection(connectionURL, Conn.user, Conn.pass);
+			return conn;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+	}
 	public static boolean check(String a, String b, Connection con) {
 		try {
-			String sql = "select * from user where sothe = ? and pass = ? ;";
+			String sql = "select * from "+Conn.table+" where sothe = ? and pass = ? ;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, a);
 			ps.setString(2, Md5.hashStr(b));
@@ -43,7 +54,7 @@ public class Msql {
 
 	public static Long getMoney(String a, String b, Connection con) {
 		try {
-			String sql = "select * from user where sothe = ? and pass = ? ;";
+			String sql = "select * from "+Conn.table+" where sothe = ? and pass = ? ;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, a);
 			ps.setString(2, Md5.hashStr(b));
@@ -63,7 +74,7 @@ public class Msql {
 
 	public static void SetMoney(String a, String b, int c, Connection con) {
 		try {
-			String sql = "update user set tk= ? where sothe = ? and pass= ?;";
+			String sql = "update "+Conn.table+" set tk= ? where sothe = ? and pass= ?;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(2, a);
 			ps.setString(3, Md5.hashStr(b));
