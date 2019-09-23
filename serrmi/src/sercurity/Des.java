@@ -4,9 +4,16 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 public class Des {
-	static String SECRET_KEY = "dccan159";
-
-	public static String decrypt(String encrypted) {
+	String SECRET_KEY = "dccan159";
+	public Des(String a)
+	{
+		SECRET_KEY=a;
+	}
+	public Des()
+	{
+	
+	}
+	public String decrypt(String encrypted) {
 		try {
 			SecretKeySpec skeySpec = new SecretKeySpec(SECRET_KEY.getBytes(), "DES");
 			Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5PADDING");
@@ -21,7 +28,7 @@ public class Des {
 		}
 	}
 
-	private static byte[] extract(String t) {
+	private  byte[] extract(String t) {
 		int d = t.length() / 2;
 		byte[] ret = new byte[d];
 		for (int i = 0; i < d; i++) {
@@ -30,7 +37,7 @@ public class Des {
 		return ret;
 	}
 
-	private static byte mbyte(char d, char c) {
+	private  byte mbyte(char d, char c) {
 		// TODO Auto-generated method stub
 		int a, b;
 		if ((d >= '0') && (d <= '9')) {
@@ -48,7 +55,7 @@ public class Des {
 		return (byte) (a * 16 + b);
 	}
 
-	public static String encrypt(String original) {
+	public String encrypt(String original) {
 		try {
 			SecretKeySpec skeySpec = new SecretKeySpec(SECRET_KEY.getBytes(), "DES");
 			Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5PADDING");

@@ -15,6 +15,7 @@ import sercurity.Des;
 import sercurity.Md5;
 
 public class Insert {
+	static Des Des=new Des();
 	public static void main(String[] args) throws SQLException {
 		ins();
 	}
@@ -24,7 +25,7 @@ public class Insert {
 		String s = sa.getAbsolutePath();
 		List<String> h = getText(s);
 		Connection con = Msql.getConn();
-		String sql = "INSERT IGNORE INTO " + Conn.table + " (sothe,name,pass,tk) values (?,?,?,?) ";
+		String sql = "INSERT IGNORE INTO " + Conn.table + " (sothe,name,pass,tk) values (?,?,?,?,?) ";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			for (String k : h) {
@@ -33,6 +34,7 @@ public class Insert {
 				ps.setString(2, dt[1]);
 				ps.setString(3, Md5.hashStr(dt[2]));
 				ps.setString(4, Des.encrypt(dt[3]));
+				ps.setString(5, Des.encrypt(dt[4]));
 				ps.executeUpdate();
 			}
 			ps.close();
