@@ -25,7 +25,7 @@ public class Insert {
 		String s = sa.getAbsolutePath();
 		List<String> h = getText(s);
 		Connection con = Msql.getConn();
-		String sql = "INSERT IGNORE INTO " + Conn.table + " (sothe,name,pass,tk) values (?,?,?,?,?) ";
+		String sql = "INSERT IGNORE INTO " + Conn.table + " (sothe,name,pass,tk,khoa) values (?,?,?,?,?) ";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
 			for (String k : h) {

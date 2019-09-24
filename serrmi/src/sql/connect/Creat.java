@@ -12,7 +12,7 @@ public class Creat {
 			Statement stmt = con.createStatement();
 			stmt.execute(sql);
 			sql = "CREATE TABLE IF NOT EXISTS " + Conn.nsql + "." + Conn.table
-					+ "( sothe VARCHAR(20) NOT NULL , name VARCHAR(50) NOT NULL , pass VARCHAR(40) NOT NULL , tk VARCHAR(70) NOT NULL ,key VARCHAR(40) NOT NULL, PRIMARY KEY (sothe)) ENGINE = InnoDB;";
+					+ "( sothe VARCHAR(20) NOT NULL , name VARCHAR(50) NOT NULL , pass VARCHAR(40) NOT NULL , tk VARCHAR(70) NOT NULL , khoa VARCHAR(70) NOT NULL , PRIMARY KEY (sothe)) ENGINE = InnoDB;";
 			stmt.execute(sql);
 			con.close();
 			Insert.ins();

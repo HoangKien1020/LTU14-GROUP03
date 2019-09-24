@@ -11,12 +11,11 @@ import sercurity.Md5;
 public class Msql {
 	Des Des = new Des();
 	String a, b;
-	static Connection con = getDConn();
-
+	static Connection con = getConn();
+	
 	public Msql(String n, String p) {
 		a = n;
 		b = p;
-		// con = getDConn();
 	}
 
 	public static Connection getConn() {
@@ -66,16 +65,16 @@ public class Msql {
 
 	public static String getkey(String id) {
 		try {
-			// Connection con=Msql.getDConn();
+			//Connection con=Msql.getDConn();
 			String ret = null;
-			String sql = "select key from " + Conn.table + " where id= ? ;";
+			String sql = "select * from " + Conn.table + " where sothe= ? ;";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, id);
 			ResultSet rs = ps.executeQuery();
 			rs.beforeFirst();
 			boolean sa = rs.next();
 			if (sa) {
-				ret = rs.getString("key");
+				ret = rs.getString("khoa");
 				ret = new Des().decrypt(ret);
 			}
 			rs.close();
