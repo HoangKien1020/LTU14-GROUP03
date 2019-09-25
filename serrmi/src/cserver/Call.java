@@ -12,23 +12,24 @@ public class Call implements Bank {
 	 */
 	Msql db;
 	Des des;
-	static final int session = 1000 * 60 * 5;// 5 p
-
-	
-	// a=pass:token:date+time
+	static final int session = 1000 * 60 * 2;
+	//	Node no chi la cai ten thoi con trai , qui dinh thoi gian chenh lech giua noi gui va nhan
+	// t dat ten la sesssion vi t thich the
 	public String login(String a, String id) throws RemoteException {
 		String key = Msql.getkey(id);
 		if (key == null)
 			return "khong ton tai tai khoan";
 		des = new Des(key);
 		String rep = des.decrypt(a);
+		if (rep == null)
+			return "ban ma bi thay doi";
 		String[] sp = rep.split(":");
 		if (sp.length != 3)
 			return "ban ma bi thay doi";
 		long millis = System.currentTimeMillis();
 		try {
 			long ds = Long.parseLong(sp[2]);
-			if ( millis-ds > session)
+			if (millis - ds > session)
 				return "tan cong phat lai";
 		} catch (Exception e) {
 			return "false";

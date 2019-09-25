@@ -12,10 +12,9 @@ public class Ser {
 		// TODO Auto-generated method stub
 		try {
 			Call call = new Call();
-			// LocateRegistry.createRegistry(8888);
 			Registry registry = LocateRegistry.createRegistry(8888);
-			Bank bk=(Bank) UnicastRemoteObject.exportObject(call, 0);  
-			registry.bind("Hello",bk);  
+			 UnicastRemoteObject.exportObject(call, 0);  
+			registry.bind("Hello",call);  
 			System.out.println("start");
 		} catch (Exception e) {
 			// TODO: handle exception
