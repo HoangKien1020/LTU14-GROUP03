@@ -37,5 +37,5 @@ Thư viện JWT cung cấp 2 cách xác thực sử dụng khóa đối xứng v
 Tìm hiểu thêm về JWT https://github.com/auth0/java-jwt
 
 `Thiết lập SSL?` <br/>
-Hiện chưa project này chưa cài đặt được SSL với Java RMI. <br/>
+Hiện project này chưa cài đặt được SSL với Java RMI. <br/>
 Thảm khảo thêm cách cài đặt: https://stackoverflow.com/questions/21586660/simple-rmi-server-with-ssl
