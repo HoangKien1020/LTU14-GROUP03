@@ -14,7 +14,7 @@ Stack: `Java RMI, Java SE, Java Swing, MySQL, JWT, Bcrypt`
 Gradle dependencies: <br/>
 `implementation 'com.auth0:java-jwt:3.8.3'`<br/>
 `compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.17'`<br/>
-`compile group: 'org.mindrot', name: 'jbcrypt', versio😴n: '0.3m'`<br/>
+`compile group: 'org.mindrot', name: 'jbcrypt', version: '0.3m'`<br/>
 
 MySQL card Table:
 ![alt text](https://i.imgur.com/LOcPL1O.png)
@@ -25,7 +25,7 @@ Cách chạy app:
 
 ![alt text](https://i.imgur.com/gsgXo0a.png)
 
-`Hiện mới chỉ có chức năng login với check số dư, còn update thêm ... `
+`Hiện mới chỉ có chức năng login với check số dư, còn update thêm 😴... `
 
 Về bảo mật: <br/>
 
