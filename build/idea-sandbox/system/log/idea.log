@@ -1,0 +1,265 @@
+2019-09-28 03:24:41,942 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2019-09-28 03:24:41,971 [     29]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-192.6817.14, 24 Sep 2019 11:39) 
+2019-09-28 03:24:41,974 [     32]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2019-09-28 03:24:41,975 [     33]   INFO -        #com.intellij.idea.Main - JRE: 11.0.4+10-b304.69 (JetBrains s.r.o) 
+2019-09-28 03:24:41,975 [     33]   INFO -        #com.intellij.idea.Main - JVM: 11.0.4+10-b304.69 (OpenJDK 64-Bit Server VM) 
+2019-09-28 03:24:41,975 [     33]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Admin\IdeaProjects\rmi-bank\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Admin\IdeaProjects\rmi-bank\build\idea-sandbox\plugins -Didea.required.plugins.id=untitled -Didea.system.path=C:\Users\Admin\IdeaProjects\rmi-bank\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea 
+2019-09-28 03:24:41,976 [     34]   INFO -        #com.intellij.idea.Main - charsets: JNU=Cp1252 file=windows-1252 
+2019-09-28 03:24:42,078 [    136]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 116 ms 
+2019-09-28 03:24:42,087 [    145]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2019-09-28 03:24:42,115 [    173]   INFO - tellij.diagnostic.LoadingPhase - Reached SPLASH loading phase 
+2019-09-28 03:24:42,131 [    189]   INFO - plication.impl.ApplicationImpl - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@2bcd6445[Running, parallelism = 7, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@21a8379f 
+2019-09-28 03:24:42,676 [    734]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2019-09-28 03:24:42,683 [    741]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-detection-groovy.xml 
+2019-09-28 03:24:42,971 [   1029]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor profiler-java.xml 
+2019-09-28 03:24:43,445 [   1503]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.4), Ant (192.6817.14), Bytecode Viewer (192.6817.14), ChangeReminder (192.6817.14), Configuration Script (192.6817.14), Copyright (192.6817.14), Coverage (192.6817.14), Eclipse Interoperability (192.6817.14), EditorConfig (192.6817.14), Git (192.6817.14), GitHub (192.6817.14), Gradle (192.6817.14), Gradle-Maven (192.6817.14), Groovy (192.6817.14), IDEA CORE (192.6817.14), IntelliLang (192.6817.14), JUnit (192.6817.14), Java (192.6817.14), Java Bytecode Decompiler (192.6817.14), Java IDE Customization (192.6817.14), Java Internationalization (192.6817.14), Java Stream Debugger (192.6817.14), JavaFX (192.6817.14), Kotlin (1.3.41-release-IJ2019.2-1), Machine Learning Code Completion (192.6817.14), Markdown (192.6817.14), Maven (192.6817.14), Mercurial (192.6817.14), Plugin DevKit (192.6817.14), Properties (192.6817.14), Settings Repository (192.6817.14), Shell Script (192.6817.14), Smali Support (192.6817.14), Subversion (192.6817.14), Task Management (192.6817.14), Terminal (192.6817.14), TestNG (192.6817.14), TextMate bundles (192.6817.14), UI Designer (192.6817.14), XPathView + XSLT (192.6817.14), XSLT Debugger (192.6817.14), YAML (192.6817.14) 
+2019-09-28 03:24:43,446 [   1504]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: Plugin display name here (1.0-SNAPSHOT) 
+2019-09-28 03:24:46,190 [   4248]   INFO - tellij.diagnostic.LoadingPhase - Reached CONFIGURATION_STORE_INITIALIZED loading phase 
+2019-09-28 03:24:46,346 [   4404]   INFO - ellij.vfs.persistent.FSRecords - Marking VFS as corrupted: 'C:\Users\Admin\IdeaProjects\rmi-bank\build\idea-sandbox\system\caches\names.dat' does not exist 
+2019-09-28 03:24:46,354 [   4412]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=492; buffer=10; max=492 
+2019-09-28 03:24:46,659 [   4717]   INFO - pl.local.NativeFileWatcherImpl - Starting file watcher: C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.jetbrains.intellij.idea\ideaIC\2019.2.3\654e395e5806d1f0a4741d2f324e48012be56949\ideaIC-2019.2.3\bin\win\fsnotifier64.exe 
+2019-09-28 03:24:46,950 [   5008]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is operational. 
+2019-09-28 03:24:49,644 [   7702]   INFO - .history.utils.LocalHistoryLog - local history version mismatch (was: 0, expected: 6), rebuilding... 
+2019-09-28 03:24:49,645 [   7703]   INFO - .history.utils.LocalHistoryLog - FS has been rebuild, rebuilding local history... 
+2019-09-28 03:24:53,724 [  11782]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2019-09-28 03:24:53,728 [  11786]   WARN - j.internal.DebugAttachDetector - Unable to start DebugAttachDetector, please add `--add-exports=java.base/jdk.internal.vm=ALL-UNNAMED` to VM options 
+2019-09-28 03:24:53,763 [  11821]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63343 
+2019-09-28 03:24:54,667 [  12725]   INFO - il.indexing.FileBasedIndexImpl - File index extensions iterated:589 
+2019-09-28 03:24:55,392 [  13450]   INFO - ij.psi.stubs.StubUpdatingIndex - Following new file types will be indexed:Kotlin,Markdown,kotlin_builtins,DGM File Type,Groovy,KNM,JAVA,CLASS,KJSM,Properties,HTML,XML 
+2019-09-28 03:24:57,856 [  15914]   INFO - pl$FileIndexDataInitialization - Initialization done:3778 
+2019-09-28 03:24:58,067 [  16125]   INFO - tellij.diagnostic.LoadingPhase - Reached FRAME_SHOWN loading phase 
+2019-09-28 03:25:00,580 [  18638]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=13, fontScale=1.0; restored: fontSize=13, fontScale=1.0 
+2019-09-28 03:25:00,855 [  18913]   INFO - j.ide.ui.OptionsTopHitProvider - 2914 ms spent to cache options in application 
+2019-09-28 03:25:01,274 [  19332]   INFO - exImpl$StubIndexInitialization - Initialization done:3418 
+2019-09-28 03:25:01,525 [  19583]   INFO - pi.util.registry.RegistryValue - Registry value 'java.completion.argument.hints' has changed to 'false' 
+2019-09-28 03:25:01,525 [  19583]   INFO - pi.util.registry.RegistryValue - Registry value 'java.completion.argument.hints.internal' has changed to 'false' 
+2019-09-28 03:25:04,011 [  22069]   INFO - rationStore.ComponentStoreImpl - Saving appDebuggerSettings took 18 ms 
+2019-09-28 03:25:04,889 [  22947]   INFO - stubs.SerializationManagerImpl - START StubSerializationManager SHUTDOWN 
+2019-09-28 03:25:04,891 [  22949]   INFO - stubs.SerializationManagerImpl - END StubSerializationManager SHUTDOWN 
+2019-09-28 03:25:04,891 [  22949]   INFO - il.indexing.FileBasedIndexImpl - START INDEX SHUTDOWN 
+2019-09-28 03:25:05,010 [  23068]   INFO - il.indexing.FileBasedIndexImpl - END INDEX SHUTDOWN 
+2019-09-28 03:25:05,013 [  23071]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-09-28 03:25:05,025 [  23083]   INFO - Types.impl.FileTypeManagerImpl - FileTypeManager: 0 auto-detected files
+Elapsed time on auto-detect: 0 ms 
+2019-09-28 03:25:05,057 [  23115]   INFO - pl.local.NativeFileWatcherImpl - Watcher terminated with exit code 0 
+2019-09-28 03:25:05,057 [  23115]   INFO - newvfs.persistent.PersistentFS - VFS dispose started 
+2019-09-28 03:25:05,224 [  23282]   INFO - newvfs.persistent.PersistentFS - VFS dispose completed 
+2019-09-28 03:25:05,228 [  23286]   INFO - plication.impl.ApplicationImpl - Write action Statistics:
+Event number:     2
+Total time spent: 1573ms
+Average duration: 786ms
+Median  duration: 0ms
+Max     duration: 1550ms (it was 'write action (class com.intellij.openapi.projectRoots.impl.DefaultJdkConfigurator$$Lambda$496/0x00000001006a0c40)') 
+2019-09-28 03:25:05,229 [  23287]   INFO - plication.impl.ApplicationImpl - AnAction.update() Statistics:
+Event number:     0
+Total time spent: 0ms
+Average duration: 0ms
+Median  duration: 0ms
+Max     duration: 0ms (it was 'null') 
+2019-09-28 03:25:05,230 [  23288]   INFO - plication.impl.ApplicationImpl - Global instance threads created counter = 9; ProcessIOExecutorService threads: 3 
+2019-09-28 03:25:05,278 [  23336]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE SHUTDOWN ------------------------------------------------------ 
+2019-09-28 03:25:05,407 [  23465]   INFO - org.jetbrains.io.BuiltInServer - web server stopped 
+2019-09-29 00:44:08,432 [      0]   INFO -        #com.intellij.idea.Main - ------------------------------------------------------ IDE STARTED ------------------------------------------------------ 
+2019-09-29 00:44:08,539 [    107]   INFO -        #com.intellij.idea.Main - JNA library (64-bit) loaded in 89 ms 
+2019-09-29 00:44:08,549 [    117]   INFO - penapi.util.io.win32.IdeaWin32 - Native filesystem for Windows is operational 
+2019-09-29 00:44:08,568 [    136]   INFO - tellij.diagnostic.LoadingPhase - Reached SPLASH loading phase 
+2019-09-29 00:44:08,597 [    165]   INFO -        #com.intellij.idea.Main - IDE: IntelliJ IDEA (build #IC-192.6817.14, 24 Sep 2019 11:39) 
+2019-09-29 00:44:08,597 [    165]   INFO -        #com.intellij.idea.Main - OS: Windows 10 (10.0, amd64) 
+2019-09-29 00:44:08,597 [    165]   INFO -        #com.intellij.idea.Main - JRE: 11.0.4+10-b304.69 (JetBrains s.r.o) 
+2019-09-29 00:44:08,598 [    166]   INFO -        #com.intellij.idea.Main - JVM: 11.0.4+10-b304.69 (OpenJDK 64-Bit Server VM) 
+2019-09-29 00:44:08,598 [    166]   INFO -        #com.intellij.idea.Main - JVM Args: -Didea.classpath.index.enabled=false -Didea.config.path=C:\Users\Admin\IdeaProjects\rmi-bank\build\idea-sandbox\config -Didea.is.internal=true -Didea.platform.prefix=Idea -Didea.plugins.path=C:\Users\Admin\IdeaProjects\rmi-bank\build\idea-sandbox\plugins -Didea.required.plugins.id=untitled -Didea.system.path=C:\Users\Admin\IdeaProjects\rmi-bank\build\idea-sandbox\system -Xms256m -Xmx512m -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant -ea 
+2019-09-29 00:44:08,599 [    167]   INFO -        #com.intellij.idea.Main - charsets: JNU=Cp1252 file=windows-1252 
+2019-09-29 00:44:08,625 [    193]   INFO - plication.impl.ApplicationImpl - CPU cores: 8; ForkJoinPool.commonPool: java.util.concurrent.ForkJoinPool@1871ae67[Running, parallelism = 8, size = 0, active = 0, running = 0, steals = 0, tasks = 0, submissions = 0]; factory: com.intellij.concurrency.IdeaForkJoinWorkerThreadFactory@6d08d110 
+2019-09-29 00:44:08,761 [    329]   INFO - com.intellij.util.ui.JBUIScale - System scale factor: 1.0 (IDE-managed HiDPI) 
+2019-09-29 00:44:08,926 [    494]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-groovy.xml 
+2019-09-29 00:44:08,938 [    506]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor duplicates-detection-groovy.xml 
+2019-09-29 00:44:09,302 [    870]   INFO - llij.ide.plugins.PluginManager - Cannot find optional descriptor profiler-java.xml 
+2019-09-29 00:44:09,691 [   1259]   INFO - llij.ide.plugins.PluginManager - Loaded bundled plugins: Android Support (10.3.4), Ant (192.6817.14), Bytecode Viewer (192.6817.14), ChangeReminder (192.6817.14), Configuration Script (192.6817.14), Copyright (192.6817.14), Coverage (192.6817.14), Eclipse Interoperability (192.6817.14), EditorConfig (192.6817.14), Git (192.6817.14), GitHub (192.6817.14), Gradle (192.6817.14), Gradle-Maven (192.6817.14), Groovy (192.6817.14), IDEA CORE (192.6817.14), IntelliLang (192.6817.14), JUnit (192.6817.14), Java (192.6817.14), Java Bytecode Decompiler (192.6817.14), Java IDE Customization (192.6817.14), Java Internationalization (192.6817.14), Java Stream Debugger (192.6817.14), JavaFX (192.6817.14), Kotlin (1.3.41-release-IJ2019.2-1), Machine Learning Code Completion (192.6817.14), Markdown (192.6817.14), Maven (192.6817.14), Mercurial (192.6817.14), Plugin DevKit (192.6817.14), Properties (192.6817.14), Settings Repository (192.6817.14), Shell Script (192.6817.14), Smali Support (192.6817.14), Subversion (192.6817.14), Task Management (192.6817.14), Terminal (192.6817.14), TestNG (192.6817.14), TextMate bundles (192.6817.14), UI Designer (192.6817.14), XPathView + XSLT (192.6817.14), XSLT Debugger (192.6817.14), YAML (192.6817.14) 
+2019-09-29 00:44:09,691 [   1259]   INFO - llij.ide.plugins.PluginManager - Loaded custom plugins: Plugin display name here (1.0-SNAPSHOT) 
+2019-09-29 00:44:13,124 [   4692]   INFO - tellij.diagnostic.LoadingPhase - Reached CONFIGURATION_STORE_INITIALIZED loading phase 
+2019-09-29 00:44:13,211 [   4779]   INFO - pi.util.registry.RegistryState - Registry values changed by user: 
+2019-09-29 00:44:13,212 [   4780]   INFO - pi.util.registry.RegistryState -   java.completion.argument.hints.internal = false 
+2019-09-29 00:44:13,236 [   4804]   INFO - pi.util.registry.RegistryState - Experimental features enabled for user: inline.browse.button, linux.native.menu, recent.and.edited.files.together, show.create.new.element.in.popup, new.large.text.file.viewer, property.value.inplace.editing 
+2019-09-29 00:44:13,286 [   4854]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=492; buffer=10; max=492 
+2019-09-29 00:44:13,402 [   4970]   INFO - pl.local.NativeFileWatcherImpl - Native file watcher is disabled 
+2019-09-29 00:44:14,465 [   6033]   INFO - til.net.ssl.CertificateManager - Default SSL context initialized 
+2019-09-29 00:44:14,494 [   6062]   INFO - rains.ide.BuiltInServerManager - built-in server started, port 63342 
+2019-09-29 00:44:14,741 [   6309]   INFO - il.indexing.FileBasedIndexImpl - File index extensions iterated:164 
+2019-09-29 00:44:15,878 [   7446]   WARN - ConfigurableExtensionPointUtil - ignore deprecated groupId: language for id: preferences.language.Kotlin.scripting 
+2019-09-29 00:44:16,245 [   7813]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=13, fontScale=1.0; restored: fontSize=13, fontScale=1.0 
+2019-09-29 00:44:16,267 [   7835]   INFO - pl$FileIndexDataInitialization - Initialization done:1690 
+2019-09-29 00:44:16,767 [   8335]   INFO - exImpl$StubIndexInitialization - Initialization done:499 
+2019-09-29 00:44:17,476 [   9044]   INFO - CompilerWorkspaceConfiguration - Available processors: 8 
+2019-09-29 00:44:20,908 [  12476]   INFO - com.intellij.ide.ui.UISettings - Loaded: fontSize=13, fontScale=1.0; restored: fontSize=13, fontScale=1.0 
+2019-09-29 00:44:31,255 [  22823]  ERROR - j.openapi.roots.impl.RootIndex - Directory index may not be queried for default project 
+java.lang.Throwable: Directory index may not be queried for default project
+	at com.intellij.openapi.diagnostic.Logger.error(Logger.java:145)
+	at com.intellij.openapi.roots.impl.RootIndex.<init>(RootIndex.java:59)
+	at com.intellij.openapi.roots.impl.DirectoryIndexImpl.getRootIndex(DirectoryIndexImpl.java:119)
+	at com.intellij.openapi.roots.impl.DirectoryIndexImpl.getOrderEntries(DirectoryIndexImpl.java:164)
+	at com.intellij.openapi.roots.impl.ProjectFileIndexImpl.getOrderEntriesForFile(ProjectFileIndexImpl.java:108)
+	at org.jetbrains.kotlin.idea.caches.project.GetModuleInfoKt.getModuleInfoByVirtualFile(getModuleInfo.kt:308)
+	at org.jetbrains.kotlin.idea.core.script.dependencies.ScriptDependenciesResolveScopeProvider.getResolveScope(ScriptDependenciesResolveScopeProvider.kt:29)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.lambda$new$0(ResolveScopeManagerImpl.java:45)
+	at com.intellij.util.containers.ConcurrentFactoryMap$4.create(ConcurrentFactoryMap.java:216)
+	at com.intellij.util.containers.ConcurrentFactoryMap.get(ConcurrentFactoryMap.java:46)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.getResolveScopeFromProviders(ResolveScopeManagerImpl.java:63)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.getResolveScope(ResolveScopeManagerImpl.java:119)
+	at com.intellij.psi.impl.ResolveScopeManager.getElementResolveScope(ResolveScopeManager.java:51)
+	at com.intellij.psi.impl.source.PsiFileImpl.getResolveScope(PsiFileImpl.java:858)
+	at com.intellij.psi.impl.source.PsiCodeFragmentImpl.getResolveScope(PsiCodeFragmentImpl.java:307)
+	at com.intellij.debugger.engine.evaluation.CodeFragmentFactoryContextWrapper.prepareResolveScope(CodeFragmentFactoryContextWrapper.java:69)
+	at com.intellij.debugger.engine.evaluation.CodeFragmentFactoryContextWrapper.createPresentationCodeFragment(CodeFragmentFactoryContextWrapper.java:49)
+	at org.jetbrains.java.debugger.JavaDebuggerEditorsProvider.createExpressionCodeFragment(JavaDebuggerEditorsProvider.java:77)
+	at com.intellij.xdebugger.evaluation.XDebuggerEditorsProviderBase.createDocument(XDebuggerEditorsProviderBase.java:67)
+	at com.intellij.xdebugger.evaluation.XDebuggerEditorsProviderBase.createDocument(XDebuggerEditorsProviderBase.java:59)
+	at com.intellij.xdebugger.impl.ui.XDebuggerEditorBase.createDocument(XDebuggerEditorBase.java:347)
+	at com.intellij.xdebugger.impl.ui.XDebuggerExpressionEditor.<init>(XDebuggerExpressionEditor.java:48)
+	at com.intellij.debugger.settings.CompoundRendererConfigurable.<init>(CompoundRendererConfigurable.java:105)
+	at com.intellij.debugger.settings.UserRenderersConfigurable.<init>(UserRenderersConfigurable.java:31)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.intellij.util.ReflectionUtil.newInstance(ReflectionUtil.java:389)
+	at com.intellij.util.ReflectionUtil.newInstance(ReflectionUtil.java:376)
+	at com.intellij.openapi.options.SimpleConfigurable.createUi(SimpleConfigurable.java:36)
+	at com.intellij.openapi.options.ConfigurableBase.createComponent(ConfigurableBase.java:57)
+	at com.intellij.ide.ui.search.SearchUtil.processConfigurables(SearchUtil.java:76)
+	at com.intellij.ide.ui.search.SearchUtil.processProjectConfigurables(SearchUtil.java:48)
+	at com.intellij.ide.ui.search.TraverseUIStarter.startup(TraverseUIStarter.java:106)
+	at com.intellij.ide.ui.search.TraverseUIStarter.main(TraverseUIStarter.java:87)
+	at com.intellij.idea.IdeaApplication.lambda$null$3(IdeaApplication.java:154)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:192)
+	at com.intellij.idea.IdeaApplication.lambda$executeInitAppInEdt$5(IdeaApplication.java:154)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:776)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:727)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:746)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:384)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2019-09-29 00:44:31,263 [  22831]  ERROR - j.openapi.roots.impl.RootIndex - IntelliJ IDEA 2019.2.3  Build #IC-192.6817.14 
+2019-09-29 00:44:31,263 [  22831]  ERROR - j.openapi.roots.impl.RootIndex - JDK: 11.0.4; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-09-29 00:44:31,263 [  22831]  ERROR - j.openapi.roots.impl.RootIndex - OS: Windows 10 
+2019-09-29 00:44:31,340 [  22908]  ERROR - j.openapi.roots.impl.RootIndex - Plugin to blame: Kotlin version: 1.3.41-release-IJ2019.2-1 
+2019-09-29 00:44:31,343 [  22911]  ERROR - j.openapi.roots.impl.RootIndex - Last Action:  
+2019-09-29 00:44:31,347 [  22915]  ERROR - j.openapi.roots.impl.RootIndex - Assertion failed: Directory index can only be queried after project initialization 
+java.lang.Throwable: Assertion failed: Directory index can only be queried after project initialization
+	at com.intellij.openapi.diagnostic.Logger.assertTrue(Logger.java:180)
+	at com.intellij.openapi.roots.impl.RootIndex.<init>(RootIndex.java:63)
+	at com.intellij.openapi.roots.impl.DirectoryIndexImpl.getRootIndex(DirectoryIndexImpl.java:119)
+	at com.intellij.openapi.roots.impl.DirectoryIndexImpl.getOrderEntries(DirectoryIndexImpl.java:164)
+	at com.intellij.openapi.roots.impl.ProjectFileIndexImpl.getOrderEntriesForFile(ProjectFileIndexImpl.java:108)
+	at org.jetbrains.kotlin.idea.caches.project.GetModuleInfoKt.getModuleInfoByVirtualFile(getModuleInfo.kt:308)
+	at org.jetbrains.kotlin.idea.core.script.dependencies.ScriptDependenciesResolveScopeProvider.getResolveScope(ScriptDependenciesResolveScopeProvider.kt:29)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.lambda$new$0(ResolveScopeManagerImpl.java:45)
+	at com.intellij.util.containers.ConcurrentFactoryMap$4.create(ConcurrentFactoryMap.java:216)
+	at com.intellij.util.containers.ConcurrentFactoryMap.get(ConcurrentFactoryMap.java:46)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.getResolveScopeFromProviders(ResolveScopeManagerImpl.java:63)
+	at com.intellij.psi.impl.file.impl.ResolveScopeManagerImpl.getResolveScope(ResolveScopeManagerImpl.java:119)
+	at com.intellij.psi.impl.ResolveScopeManager.getElementResolveScope(ResolveScopeManager.java:51)
+	at com.intellij.psi.impl.source.PsiFileImpl.getResolveScope(PsiFileImpl.java:858)
+	at com.intellij.psi.impl.source.PsiCodeFragmentImpl.getResolveScope(PsiCodeFragmentImpl.java:307)
+	at com.intellij.debugger.engine.evaluation.CodeFragmentFactoryContextWrapper.prepareResolveScope(CodeFragmentFactoryContextWrapper.java:69)
+	at com.intellij.debugger.engine.evaluation.CodeFragmentFactoryContextWrapper.createPresentationCodeFragment(CodeFragmentFactoryContextWrapper.java:49)
+	at org.jetbrains.java.debugger.JavaDebuggerEditorsProvider.createExpressionCodeFragment(JavaDebuggerEditorsProvider.java:77)
+	at com.intellij.xdebugger.evaluation.XDebuggerEditorsProviderBase.createDocument(XDebuggerEditorsProviderBase.java:67)
+	at com.intellij.xdebugger.evaluation.XDebuggerEditorsProviderBase.createDocument(XDebuggerEditorsProviderBase.java:59)
+	at com.intellij.xdebugger.impl.ui.XDebuggerEditorBase.createDocument(XDebuggerEditorBase.java:347)
+	at com.intellij.xdebugger.impl.ui.XDebuggerExpressionEditor.<init>(XDebuggerExpressionEditor.java:48)
+	at com.intellij.debugger.settings.CompoundRendererConfigurable.<init>(CompoundRendererConfigurable.java:105)
+	at com.intellij.debugger.settings.UserRenderersConfigurable.<init>(UserRenderersConfigurable.java:31)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.intellij.util.ReflectionUtil.newInstance(ReflectionUtil.java:389)
+	at com.intellij.util.ReflectionUtil.newInstance(ReflectionUtil.java:376)
+	at com.intellij.openapi.options.SimpleConfigurable.createUi(SimpleConfigurable.java:36)
+	at com.intellij.openapi.options.ConfigurableBase.createComponent(ConfigurableBase.java:57)
+	at com.intellij.ide.ui.search.SearchUtil.processConfigurables(SearchUtil.java:76)
+	at com.intellij.ide.ui.search.SearchUtil.processProjectConfigurables(SearchUtil.java:48)
+	at com.intellij.ide.ui.search.TraverseUIStarter.startup(TraverseUIStarter.java:106)
+	at com.intellij.ide.ui.search.TraverseUIStarter.main(TraverseUIStarter.java:87)
+	at com.intellij.idea.IdeaApplication.lambda$null$3(IdeaApplication.java:154)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:192)
+	at com.intellij.idea.IdeaApplication.lambda$executeInitAppInEdt$5(IdeaApplication.java:154)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:776)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:727)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:746)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:384)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2019-09-29 00:44:31,387 [  22955]  ERROR - j.openapi.roots.impl.RootIndex - IntelliJ IDEA 2019.2.3  Build #IC-192.6817.14 
+2019-09-29 00:44:31,399 [  22967]  ERROR - j.openapi.roots.impl.RootIndex - JDK: 11.0.4; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-09-29 00:44:31,405 [  22973]  ERROR - j.openapi.roots.impl.RootIndex - OS: Windows 10 
+2019-09-29 00:44:31,414 [  22982]  ERROR - j.openapi.roots.impl.RootIndex - Plugin to blame: Kotlin version: 1.3.41-release-IJ2019.2-1 
+2019-09-29 00:44:31,418 [  22986]  ERROR - j.openapi.roots.impl.RootIndex - Last Action:  
+2019-09-29 00:44:32,229 [  23797]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2019-09-29 00:44:32,262 [  23830]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2019-09-29 00:44:32,263 [  23831]   INFO - leScriptDefinitionsContributor - [kts] error loading gradle script templates: Project 'Default (Template) Project' isn't linked with Gradle 
+2019-09-29 00:44:32,275 [  23843]  ERROR - intellij.openapi.progress.Task - project.baseDir must not be null 
+java.lang.IllegalStateException: project.baseDir must not be null
+	at org.jetbrains.kotlin.idea.script.ScriptTemplatesFromDependenciesProvider.loadScriptDefinitions(scriptsTemplatesFromDependencies.kt:58)
+	at org.jetbrains.kotlin.idea.script.AsyncScriptDefinitionsContributor$DefinitionsCollectorBackgroundTask.run(AsyncScriptDefinitionsContributor.kt:81)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:894)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$5.run(CoreProgressManager.java:447)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:169)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:591)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:537)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:59)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:156)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runProcessWithProgressSynchronously(ApplicationImpl.java:531)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:459)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.runProcessWithProgressSynchronously(ProgressManagerImpl.java:82)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.run(CoreProgressManager.java:302)
+	at com.intellij.openapi.progress.Task.queue(Task.java:115)
+	at org.jetbrains.kotlin.idea.script.AsyncScriptDefinitionsContributor.asyncRunUpdateScriptTemplates(AsyncScriptDefinitionsContributor.kt:47)
+	at org.jetbrains.kotlin.idea.script.AsyncScriptDefinitionsContributor.getDefinitions(AsyncScriptDefinitionsContributor.kt:32)
+	at org.jetbrains.kotlin.idea.core.script.ScriptDefinitionsManager.safeGetDefinitions(ScriptDefinitionsManager.kt:201)
+	at org.jetbrains.kotlin.idea.core.script.ScriptDefinitionsManager.reloadScriptDefinitions(ScriptDefinitionsManager.kt:130)
+	at org.jetbrains.kotlin.idea.core.script.ScriptDefinitionsManager.getAllDefinitions(ScriptDefinitionsManager.kt:145)
+	at org.jetbrains.kotlin.idea.script.configuration.KotlinScriptingSettingsConfigurable.createComponent(KotlinScriptingSettingsConfigurable.java:42)
+	at com.intellij.openapi.options.ex.ConfigurableWrapper.createComponent(ConfigurableWrapper.java:155)
+	at com.intellij.ide.ui.search.SearchUtil.processConfigurables(SearchUtil.java:76)
+	at com.intellij.ide.ui.search.SearchUtil.processProjectConfigurables(SearchUtil.java:48)
+	at com.intellij.ide.ui.search.TraverseUIStarter.startup(TraverseUIStarter.java:106)
+	at com.intellij.ide.ui.search.TraverseUIStarter.main(TraverseUIStarter.java:87)
+	at com.intellij.idea.IdeaApplication.lambda$null$3(IdeaApplication.java:154)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:192)
+	at com.intellij.idea.IdeaApplication.lambda$executeInitAppInEdt$5(IdeaApplication.java:154)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:776)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:727)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:746)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:384)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2019-09-29 00:44:32,281 [  23849]  ERROR - intellij.openapi.progress.Task - IntelliJ IDEA 2019.2.3  Build #IC-192.6817.14 
+2019-09-29 00:44:32,281 [  23849]  ERROR - intellij.openapi.progress.Task - JDK: 11.0.4; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o 
+2019-09-29 00:44:32,281 [  23849]  ERROR - intellij.openapi.progress.Task - OS: Windows 10 
+2019-09-29 00:44:32,285 [  23853]  ERROR - intellij.openapi.progress.Task - Plugin to blame: Kotlin version: 1.3.41-release-IJ2019.2-1 
+2019-09-29 00:44:32,317 [  23885]  ERROR - intellij.openapi.progress.Task - Last Action:  
