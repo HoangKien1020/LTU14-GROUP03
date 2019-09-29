@@ -5,7 +5,7 @@ Hướng dẫn cấu hình và cài đặt
 
 `git clone https://github.com/HoangKien1020/LTU14-GROUP03.git`
 
-`git checkout origin/khanhhh-ltu14`
+`git checkout origin/ltu14-khanhhh`
 
 Sử dụng InteliJ IDE. Download: https://www.jetbrains.com/idea/download/#section=windows
 
