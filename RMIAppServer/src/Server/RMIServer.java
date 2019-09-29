@@ -1,11 +1,12 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+* To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Server;
 
 import java.net.MalformedURLException;
+
 import java.rmi.AlreadyBoundException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -21,10 +22,10 @@ public class RMIServer {
         try {
             System.out.println(">>>>>INFO: RMI Server started!!!!!!!!");
             // Instantiating the implementation class 
-            CalculatorImpl impl = new CalculatorImpl();
+            BannImpl impl = new BannImpl();
             // Binding the remote object (stub) in the registry 
             LocateRegistry.createRegistry(6789);
-            Naming.bind("rmi://192.168.1.8:6789/RMI", impl);
+            Naming.bind("rmi://localhost:6789/RMI", impl);
 
         } catch (RemoteException ex) {
             ex.printStackTrace();
@@ -36,4 +37,10 @@ public class RMIServer {
 
     }
 
+//    @Override
+//    public ServerSocket createServerSocket(int port) throws IOException {
+//        ServerSocketFactory factory=ServerSocketFactory.getDefault();
+//        ServerSocket socket=factory.createServerSocket(port);
+//        return socket;
+//    }
 }
