@@ -1,5 +1,5 @@
 package cserver;
-
+//phat lai ? 
 import java.rmi.RemoteException;
 
 import remote.Bank;
@@ -12,10 +12,13 @@ public class Call implements Bank {
 	 */
 	Msql db;
 	Des des;
-	static final int session = 1000 * 60 * 2;
+	int ct;
+	static final int session = 1000 * 10;
 	//	Node no chi la cai ten thoi con trai , qui dinh thoi gian chenh lech giua noi gui va nhan
 	// t dat ten la sesssion vi t thich the
+	
 	public String login(String a, String id) throws RemoteException {
+		System.out.println(a);
 		String key = Msql.getkey(id);
 		if (key == null)
 			return "khong ton tai tai khoan";
@@ -35,22 +38,18 @@ public class Call implements Bank {
 			return "false";
 		}
 		db = new Msql(id, sp[0]);
-//		int token=Integer.parseInt(sp[1])+1;
-//		String s=token+":"+sp[2];
 		return "true";
 	}
 
-	@Override
-	// chua nghi ra
-	public int ark(String a) throws RemoteException {
+	public String login(String id, String PIN, int count) throws RemoteException {
 		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int hello() throws RemoteException {
-		// TODO Auto-generated method stub
-		return 10;
+		String key = Msql.getkey(id);
+		if (key == null)
+			return "khong ton tai tai khoan";
+		db = new Msql(id,PIN);
+		if(!db.check()) return "sai mat khau";
+		ct=count ;
+		return "ket noi thanh cong";
 	}
 
 }

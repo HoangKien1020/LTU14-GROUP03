@@ -1,7 +1,10 @@
 package client;
 
+import java.io.File;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+
+import javax.rmi.ssl.SslRMIClientSocketFactory;
 
 import remote.Bank;
 import sercurity.Des;
@@ -12,37 +15,26 @@ public class Atm {
 	public static void main(String[] args) {
 		Registry registry;
 		try {
-			registry = LocateRegistry.getRegistry(host, 8888);
+			setSettings();
+			registry = LocateRegistry.getRegistry(host, 8888, new SslRMIClientSocketFactory());
 			Bank stub = (Bank) registry.lookup("Hello");
-			String ap = stub.login("1ddd78f1bf53ead82a5325a263ed427df0613ca2895e95003cd23dc65aedbd9e", "20158034");
+			String ap = stub.login("20158034", "meo nho", 0);
 			System.out.println(ap);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//1ddd78f1bf53ead82a5325a263ed427df0613ca2895e95003cd23dc65aedbd9e
-		// Looking up the registry for the remote object
 
 	}
 
-	static String test() {
-		long millis = System.currentTimeMillis();
-		int d = 18; // random
-		String pass = "meo nho";
-		String key = "aabbccdd"; // key value in in put file
-		String sen = pass + ":" + d + ":" + millis;
-		return new Des(key).encrypt(sen);
-
+	private static void setSettings() {
+		String path = new File("").getAbsolutePath();
+		String pass = "dangcongcan"; // ko duoc tu tien thay doi
+		System.setProperty("javax.net.ssl.debug", "all");
+		System.setProperty("javax.net.ssl.keyStore", path+"/ssl/client/KeyStore.jks");
+		System.setProperty("javax.net.ssl.keyStorePassword", pass);
+		System.setProperty("javax.net.ssl.trustStore", path+"/ssl/client/truststore.jks");
+		System.setProperty("javax.net.ssl.trustStorePassword", pass);
 	}
 
-	static String test2()// kiem tra tan cong phat lai
-	{
-		long millis = System.currentTimeMillis() - 1000 * 60 * 7;
-		int d = 18; // random
-		String pass = "meo nho";
-		String key = "aabbccdd"; // key value in in put file
-		String sen = pass + ":" + d + ":" + millis;
-		return new Des(key).encrypt(sen);
-
-	}
 }
