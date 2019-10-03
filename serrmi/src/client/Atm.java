@@ -7,12 +7,14 @@ import java.rmi.registry.Registry;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 
 import remote.Bank;
-import sercurity.Des;
 
 public class Atm {
 	static String host = "localhost";
 
 	public static void main(String[] args) {
+		if (args.length > 0) {
+			host = args[0];
+		}
 		Registry registry;
 		try {
 			setSettings();
@@ -21,7 +23,6 @@ public class Atm {
 			String ap = stub.login("20158034", "meo nho", 0);
 			System.out.println(ap);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -31,9 +32,9 @@ public class Atm {
 		String path = new File("").getAbsolutePath();
 		String pass = "dangcongcan"; // ko duoc tu tien thay doi
 		System.setProperty("javax.net.ssl.debug", "all");
-		System.setProperty("javax.net.ssl.keyStore", path+"/ssl/client/KeyStore.jks");
+		System.setProperty("javax.net.ssl.keyStore", path + "/ssl/client/KeyStore.jks");
 		System.setProperty("javax.net.ssl.keyStorePassword", pass);
-		System.setProperty("javax.net.ssl.trustStore", path+"/ssl/client/truststore.jks");
+		System.setProperty("javax.net.ssl.trustStore", path + "/ssl/client/truststore.jks");
 		System.setProperty("javax.net.ssl.trustStorePassword", pass);
 	}
 

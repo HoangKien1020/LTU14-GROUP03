@@ -11,18 +11,22 @@ import javax.rmi.ssl.SslRMIServerSocketFactory;
 public class Ser {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String host = "localhost";
+		if (args.length > 0) {
+			host = args[0];
+		}
 		try {
+
+			System.setProperty("java.rmi.server.hostname", host);
 			setSettings();
 			Call call = new Call();
 			LocateRegistry.createRegistry(8888, new SslRMIClientSocketFactory(),
 					new SslRMIServerSocketFactory(null, null, true));
-			Registry registry = LocateRegistry.getRegistry("amneiht", 8888, new SslRMIClientSocketFactory());
+			Registry registry = LocateRegistry.getRegistry(host, 8888, new SslRMIClientSocketFactory());
 			UnicastRemoteObject.exportObject(call, 0);
 			registry.bind("Hello", call);
 			System.out.println("start");
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 
 		}

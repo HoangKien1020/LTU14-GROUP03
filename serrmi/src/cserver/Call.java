@@ -13,11 +13,9 @@ public class Call implements Bank {
 	Msql db;
 	Des des;
 	int ct;
-	static final int session = 1000 * 10;
-	//	Node no chi la cai ten thoi con trai , qui dinh thoi gian chenh lech giua noi gui va nhan
-	// t dat ten la sesssion vi t thich the
-	
+
 	public String login(String a, String id) throws RemoteException {
+		int session = 1000 * 10;
 		System.out.println(a);
 		String key = Msql.getkey(id);
 		if (key == null)
@@ -42,7 +40,6 @@ public class Call implements Bank {
 	}
 
 	public String login(String id, String PIN, int count) throws RemoteException {
-		// TODO Auto-generated method stub
 		String key = Msql.getkey(id);
 		if (key == null)
 			return "khong ton tai tai khoan";
