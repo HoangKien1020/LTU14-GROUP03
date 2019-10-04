@@ -1,4 +1,4 @@
-package client;
+package Client;
 
 import java.io.File;
 import java.rmi.registry.LocateRegistry;
@@ -6,9 +6,9 @@ import java.rmi.registry.Registry;
 
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 
-import remote.Bank;
+import Bean.Bank;
 
-public class Atm {
+public class  RMIClient {
 	static String host = "localhost";
 
 	public static void main(String[] args) {
@@ -19,9 +19,11 @@ public class Atm {
 		try {
 			setSettings();
 			registry = LocateRegistry.getRegistry(host, 8888, new SslRMIClientSocketFactory());
-			Bank stub = (Bank) registry.lookup("Hello");
-			String ap = stub.login("20158034", "meo nho", 0);
-			System.out.println(ap);
+			Bank c = (Bank) registry.lookup("Hello");
+			String NoCard = "1234567890";
+			String Passwd = "909090";
+			int count = 2;
+			System.out.println("Result is :" + c.login(NoCard, Passwd, count));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
