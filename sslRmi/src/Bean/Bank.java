@@ -6,4 +6,5 @@ import java.rmi.RemoteException;
 public interface Bank extends Remote {
 
     public String login(String cardNo, String PIN, int count) throws RemoteException;
+
 }

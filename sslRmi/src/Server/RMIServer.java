@@ -17,18 +17,13 @@ public class RMIServer {
 	public static void main(String[] args) {
 
 		String host = "localhost";
-		if (args.length > 0) {
-			host = args[0];
-		}
 		try {
-
-			System.setProperty("java.rmi.server.hostname", host);
 			setSettings();
 			BannImpl call = new BannImpl();
 			LocateRegistry.createRegistry(8888, new SslRMIClientSocketFactory(),
 					new SslRMIServerSocketFactory(null, null, true));
 			Registry registry = LocateRegistry.getRegistry(host, 8888, new SslRMIClientSocketFactory());
-			UnicastRemoteObject.exportObject(call, 0);
+
 			registry.bind("Hello", call);
 			System.out.println(">>>>>INFO: RMI Server started!!!!!!!!");
 		} catch (Exception e) {
@@ -39,12 +34,11 @@ public class RMIServer {
 	}
 
 	private static void setSettings() {
-		String path = new File("").getAbsolutePath();
-		String pass = "dangcongcan"; // ko duoc tu tien thay doi
+		String pass = "123456";
 		System.setProperty("javax.net.ssl.debug", "all");
-		System.setProperty("javax.net.ssl.keyStore", path + "/ssl/server/KeyStore.jks");
+		System.setProperty("javax.net.ssl.keyStore", "/home/rc/Desktop/1ShareVmware/ptpmpt/LTU14-GROUP03/sslRmi/src/key/serverKey/server.keystore");
 		System.setProperty("javax.net.ssl.keyStorePassword", pass);
-		System.setProperty("javax.net.ssl.trustStore", path + "/ssl/server/truststore.jks");
+		System.setProperty("javax.net.ssl.trustStore", "/home/rc/Desktop/1ShareVmware/ptpmpt/LTU14-GROUP03/sslRmi/src/key/serverKey/server.truststore");
 		System.setProperty("javax.net.ssl.trustStorePassword", pass);
 	}
 }

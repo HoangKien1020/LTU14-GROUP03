@@ -22,7 +22,7 @@ public class  RMIClient {
 			Bank c = (Bank) registry.lookup("Hello");
 			String NoCard = "1234567890";
 			String Passwd = "909090";
-			int count = 2;
+			int count = 9;
 			System.out.println("Result is :" + c.login(NoCard, Passwd, count));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -31,12 +31,11 @@ public class  RMIClient {
 	}
 
 	private static void setSettings() {
-		String path = new File("").getAbsolutePath();
-		String pass = "dangcongcan"; // ko duoc tu tien thay doi
+		String pass = "123456"; 
 		System.setProperty("javax.net.ssl.debug", "all");
-		System.setProperty("javax.net.ssl.keyStore", path + "/ssl/client/KeyStore.jks");
+		System.setProperty("javax.net.ssl.keyStore", "/home/rc/Desktop/1ShareVmware/ptpmpt/LTU14-GROUP03/sslRmi/src/key/clientKey/client.keystore");
 		System.setProperty("javax.net.ssl.keyStorePassword", pass);
-		System.setProperty("javax.net.ssl.trustStore", path + "/ssl/client/truststore.jks");
+		System.setProperty("javax.net.ssl.trustStore", "/home/rc/Desktop/1ShareVmware/ptpmpt/LTU14-GROUP03/sslRmi/src/key/clientKey/client.truststore");
 		System.setProperty("javax.net.ssl.trustStorePassword", pass);
 	}
 
