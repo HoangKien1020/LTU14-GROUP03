@@ -31,6 +31,6 @@ public interface Bank extends Remote {
 
     public ArrayList<String> withdraw(int id, double amount, int count) throws RemoteException, SQLException;
 
-    public void doimatkhau(int id, String newpass, int count) throws RemoteException, SQLException;
+    public void doimatkhau(int id, String oldpass,String newpass, int count) throws RemoteException, SQLException;
 
 }
