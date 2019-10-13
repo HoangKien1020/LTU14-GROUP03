@@ -27,10 +27,10 @@ public interface Bank extends Remote {
 
     public ArrayList<String> inquiry(int id, int count) throws RemoteException, SQLException;
 
-    public ArrayList<String> transfer(int id1, int id2, double amount, int count) throws RemoteException, SQLException;
+    public ArrayList<String> transfer(int id1, int id2, BigDecimal amount, int count) throws RemoteException, SQLException;
 
-    public ArrayList<String> withdraw(int id, double amount, int count) throws RemoteException, SQLException;
+    public ArrayList<String> withdraw(int id, BigDecimal amount, int count) throws RemoteException, SQLException;
 
-    public void doimatkhau(int id, String oldpass,String newpass, int count) throws RemoteException, SQLException;
+    public ArrayList<String> chnagepass(int id, String oldpass,String newpass, int count) throws RemoteException, SQLException;
 
 }
