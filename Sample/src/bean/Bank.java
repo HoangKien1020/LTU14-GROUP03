@@ -17,21 +17,21 @@ import java.util.ArrayList;
  */
 // Creating Remote interface for our application 
 public interface Bank extends Remote {
+
     //to check,ignore it.
     public String logintest(String cardNo, String PIN, int count) throws RemoteException;
+
     //beginning
     public ArrayList<String> login(String cardNo, String PIN, int count) throws RemoteException, SQLException;
 
-    public Account getAccount(int id, int count) throws RemoteException, SQLException;
+    public Account getAccount(String cardNo, int count) throws RemoteException, SQLException;
 
-    public User getUser(int id, int count) throws RemoteException, SQLException;
+    public ArrayList<String> inquiry(String cardNo, int count) throws RemoteException, SQLException;
 
-    public ArrayList<String> inquiry(int id, int count) throws RemoteException, SQLException;
+    public ArrayList<String> transfer(String cardNo1, String cardNo2, BigDecimal amount, int count) throws RemoteException, SQLException;
 
-    public ArrayList<String> transfer(int id1, int id2, BigDecimal amount, int count) throws RemoteException, SQLException;
+    public ArrayList<String> withdraw(String cardNo, BigDecimal amount, int count) throws RemoteException, SQLException;
 
-    public ArrayList<String> withdraw(int id, BigDecimal amount, int count) throws RemoteException, SQLException;
-
-    public ArrayList<String> changepass(int id, String oldpass,String newpass, int count) throws RemoteException, SQLException;
+    public ArrayList<String> changepass(String cardNo, String oldpass, String newpass, int count) throws RemoteException, SQLException;
 
 }

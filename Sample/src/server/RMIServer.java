@@ -16,8 +16,8 @@ import javax.rmi.ssl.SslRMIServerSocketFactory;
  * @author HK
  */
 public class RMIServer {
-    
-public void init(RMIServer server){
+
+    public void init(RMIServer server) {
         String host = "localhost";
         try {
             setSettings();

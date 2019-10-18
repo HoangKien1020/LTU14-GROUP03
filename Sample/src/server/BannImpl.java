@@ -7,7 +7,6 @@ package Server;
 
 import bean.Bank;
 import bean.Account;
-import bean.User;
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -58,41 +57,36 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
     }
 
     @Override
-    public Account getAccount(int id, int count) throws RemoteException, SQLException {
-        String sql = "select * from Account where id=?";
+    public Account getAccount(String cardNo, int count) throws RemoteException, SQLException {
+        String sql = "select * from Account where card_no=?";
         PreparedStatement ps;
         ps = server.MyConnection.getConnection().prepareStatement(sql);
-        ps.setInt(1, id);
+        ps.setString(1, cardNo);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
-            return new Account(rs.getInt(1), rs.getString(2),
-                    rs.getString(3), rs.getBigDecimal(4));
+            return new Account(rs.getString(2), rs.getString(3),
+                    rs.getString(4), rs.getString(5), rs.getString(6), rs.getBigDecimal(7));
         }
         return null;
     }
 
     @Override
-    public User getUser(int id, int count) throws RemoteException, SQLException {
+    public ArrayList<String> inquiry(String cardNo, int count) throws RemoteException, SQLException {
         return null;
     }
 
     @Override
-    public ArrayList<String> inquiry(int id, int count) throws RemoteException, SQLException {
+    public ArrayList<String> transfer(String cardNo1, String cardNo2, BigDecimal amount, int count) throws RemoteException, SQLException {
         return null;
     }
 
     @Override
-    public ArrayList<String> transfer(int id1, int id2, BigDecimal amount, int count) throws RemoteException, SQLException {
-        return null;
-    }
-
-    @Override
-    public ArrayList<String> withdraw(int id, BigDecimal amount, int count) throws RemoteException, SQLException {
+    public ArrayList<String> withdraw(String cardNo, BigDecimal amount, int count) throws RemoteException, SQLException {
         //store code
         ArrayList<String> code = new ArrayList<>();
         String store = "Rút tiền thành công!";
-        Account acc = getAccount(id, count);
-        if (amount.compareTo(new BigDecimal("50000")) == 1) {
+        Account acc = getAccount(cardNo, count);
+        if (amount.compareTo(new BigDecimal("50000")) == 0 || amount.compareTo(new BigDecimal("50000")) == 1) {
 
             if (amount.compareTo(acc.getBalance()) == 1) {
                 code.add("Lỗi,Số tiền lớn hơn số dư của bạn!");
@@ -102,11 +96,11 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
                     code.add("Lỗi,số tiền phải là bội của 5");
                 } else {
                     BigDecimal balance = acc.getBalance().subtract(amount);
-                    String sql = "update Account set balance =? where id =?";
+                    String sql = "update Account set balance =? where card_no =?";
                     PreparedStatement ps;
                     ps = server.MyConnection.getConnection().prepareStatement(sql);
                     ps.setBigDecimal(1, balance);
-                    ps.setInt(2, id);
+                    ps.setString(2, cardNo);
                     ps.executeUpdate();
                 }
             }
@@ -125,10 +119,10 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
         PreparedStatement ps;
         Calendar cal = Calendar.getInstance();
         java.sql.Timestamp curent_Date = new java.sql.Timestamp(new java.util.Date().getTime());
-        String sqlhistory = "INSERT INTO History(id1,id2,type,money_no,tran_date,code) VALUES(?,?,?,?,?,?)";
+        String sqlhistory = "INSERT INTO History(card_no1,card_no2,type,money_no,tran_date,code) VALUES(?,?,?,?,?,?)";
         ps = server.MyConnection.getConnection().prepareStatement(sqlhistory);
-        ps.setInt(1, id);
-        ps.setInt(2, id);
+        ps.setString(1, acc.getCard_no());
+        ps.setString(2, acc.getCard_no());
         ps.setInt(3, 1);
         ps.setBigDecimal(4, amount);
         ps.setTimestamp(5, curent_Date, cal);
@@ -138,12 +132,12 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
     }
 
     //check password
-    public Boolean checkpass(String plaintext, int id) throws SQLException {
+    public Boolean checkpass(String plaintext, String card_no) throws SQLException {
         String hashed = "";
-        String sql = "select pin from Account where id =?";
+        String sql = "select pin from Account where card_no =?";
         PreparedStatement ps;
         ps = server.MyConnection.getConnection().prepareStatement(sql);
-        ps.setInt(1, id);
+        ps.setString(1, card_no);
         ResultSet rs = ps.executeQuery();
         if (rs.next()) {
             hashed = rs.getString(1);
@@ -156,14 +150,14 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
     }
     //change pass
 
-    private void changepassSQL(int id, String newpin) {
+    private void changepassSQL(String card_no, String newpin) {
         String hashed = BCrypt.hashpw(newpin, BCrypt.gensalt(12));
         try {
-            String sql = "update Account set pin =? where id =?";
+            String sql = "update Account set pin =? where card_no =?";
             PreparedStatement ps;
             ps = server.MyConnection.getConnection().prepareStatement(sql);
             ps.setString(1, hashed);
-            ps.setInt(2, id);
+            ps.setString(2, card_no);
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(BannImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -171,11 +165,11 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
     }
 
     @Override
-    public ArrayList<String> changepass(int id, String oldpass, String newpass, int count) throws RemoteException, SQLException {
+    public ArrayList<String> changepass(String cardNo, String oldpass, String newpass, int count) throws RemoteException, SQLException {
         ArrayList<String> code = new ArrayList<>();
-        if (checkpass(oldpass, id)) {
+        if (checkpass(oldpass, cardNo)) {
             if (!newpass.equals("old")) {
-                changepassSQL(id, newpass);
+                changepassSQL(cardNo, newpass);
             }
         } else {
             code.add("Mật khẩu cũ không đúng!");

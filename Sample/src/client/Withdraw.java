@@ -22,10 +22,10 @@ import javax.swing.JOptionPane;
 public class Withdraw extends javax.swing.JFrame {
 
     private int count = 3;
-    private int id = 1;
     private Locale locale = new Locale("vi", "VN");
     private NumberFormat n = NumberFormat.getCurrencyInstance(locale);
     private RMIClient client;
+    private String cardNo = "1234567890";
 
     /**
      * Creates new form Withdraw
@@ -36,7 +36,7 @@ public class Withdraw extends javax.swing.JFrame {
             initComponents();
             setLocationRelativeTo(null);
 
-            tfBalance.setText(String.valueOf(n.format(client.getBank().getAccount(id, count).getBalance())));
+            tfBalance.setText(String.valueOf(n.format(client.getBank().getAccount(cardNo, count).getBalance())));
 
         } catch (RemoteException ex) {
             Logger.getLogger(Withdraw.class.getName()).log(Level.SEVERE, null, ex);
@@ -165,7 +165,7 @@ public class Withdraw extends javax.swing.JFrame {
         if (isNumeric(tfAmount.getText())) {
             try {
                 ArrayList<String> code;
-                code = client.getBank().withdraw(id, new BigDecimal(tfAmount.getText()), count);
+                code = client.getBank().withdraw(cardNo, new BigDecimal(tfAmount.getText()), count);
                 if (code.size() > 0) {
                     for (int i = 0; i < code.size(); i++) {
                         codeshow = code.get(i) + "\n";
@@ -173,7 +173,7 @@ public class Withdraw extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, codeshow, "Warning",
                             JOptionPane.WARNING_MESSAGE);
                 } else {
-                    tfBalance.setText(String.valueOf(n.format(client.getBank().getAccount(id, count).getBalance())));
+                    tfBalance.setText(String.valueOf(n.format(client.getBank().getAccount(cardNo, count).getBalance())));
                     JOptionPane.showMessageDialog(null, "Rút tiền thành công", "Success",
                             JOptionPane.INFORMATION_MESSAGE);
                 }
