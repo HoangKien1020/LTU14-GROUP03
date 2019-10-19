@@ -44,7 +44,7 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
-        naptienID = new javax.swing.JTextField();
+        naptienCardNumber = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -56,14 +56,14 @@ public class Main extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        idDelete = new javax.swing.JTextField();
+        CNDelete = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         deleteAccBut = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         deleteUserTextArea = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
-        changepassID = new javax.swing.JTextField();
+        changepassCN = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -86,15 +86,15 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Giám sát giao dịch", jPanel5);
 
-        naptienID.addActionListener(new java.awt.event.ActionListener() {
+        naptienCardNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                naptienIDActionPerformed(evt);
+                naptienCardNumberActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("ID");
+        jLabel1.setText("card number");
 
-        jLabel7.setText("Nhap ID va so tien can nap");
+        jLabel7.setText("Nhap card number va so tien can nap");
 
         jLabel8.setText("So tien");
 
@@ -115,12 +115,12 @@ public class Main extends javax.swing.JFrame {
         naptienShowUserInfo.setColumns(20);
         naptienShowUserInfo.setRows(5);
         naptienShowUserInfo.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 naptienShowUserInfoAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jScrollPane1.setViewportView(naptienShowUserInfo);
@@ -132,27 +132,28 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(naptienSoTien))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(52, 52, 52)
-                                .addComponent(naptienID, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(26, 26, 26)
+                            .addComponent(naptienSoTien, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
+                            .addComponent(naptienCardNumber))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(naptienKiemTraBut)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(naptienThucHienBut))
                     .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(110, 110, 110)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGap(88, 88, 88)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 101, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +163,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(naptienID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(naptienCardNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -189,9 +190,9 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Tạo tài khoản", jPanel8);
 
-        jLabel2.setText("ID");
+        jLabel2.setText("Card Number");
 
-        jLabel3.setText("Input Account or ID");
+        jLabel3.setText("Input Card Number");
 
         deleteAccBut.setText("delete");
         deleteAccBut.addActionListener(new java.awt.event.ActionListener() {
@@ -209,19 +210,21 @@ public class Main extends javax.swing.JFrame {
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(141, 141, 141)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
                         .addComponent(jLabel2)
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addComponent(idDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(deleteAccBut)))))
-                .addContainerGap(130, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CNDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(deleteAccBut)))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,7 +234,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(idDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CNDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteAccBut))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,7 +256,7 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Thoát", jPanel1);
 
-        jLabel4.setText("User ID");
+        jLabel4.setText("Card Number");
 
         jLabel5.setText("New passwd");
 
@@ -278,19 +281,19 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(changepassID)
+                    .addComponent(changepassCN)
                     .addComponent(changepassPin1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
                     .addComponent(changepassPin2))
                 .addGap(51, 51, 51)
                 .addComponent(ChangePassBut)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(changepassID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(changepassCN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -326,14 +329,14 @@ public class Main extends javax.swing.JFrame {
 
     private void ChangePassButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePassButActionPerformed
         // TODO add your handling code here:
-        String tmpID=changepassID.getText();
+        String tmpCN=changepassCN.getText();
         String tmpPin1=changepassPin1.getText();
         String tmpPin2=changepassPin2.getText();
-        if (!tmpID.equals("") && !tmpPin1.equals("")&& !tmpPin2.equals("") && isNumeric(tmpPin1) && isNumeric(tmpPin2)){
-            if( sql.checkID(tmpID) && tmpPin1.equals(tmpPin2)){
+        if (!tmpCN.equals("") && !tmpPin1.equals("")&& !tmpPin2.equals("") && isNumeric(tmpPin1) && isNumeric(tmpPin2)){
+            if( sql.checkCardNumber(tmpCN) && tmpPin1.equals(tmpPin2)){
                 JOptionPane.showMessageDialog(null, "Doi mat khau thanh cong !", "Success",
                     JOptionPane.INFORMATION_MESSAGE);
-                if (sql.updatePin(tmpID,tmpPin1)){         
+                if (sql.updatePin(tmpCN,tmpPin1)){         
                 }
             }
             else{
@@ -348,11 +351,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_ChangePassButActionPerformed
 
     private void deleteAccButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAccButActionPerformed
-        String tmpID =idDelete.getText();
-        if (!tmpID.equals("")){
-            if( sql.checkID(tmpID)){
+        String tmpCN =CNDelete.getText();
+        if (!tmpCN.equals("")){
+            if( sql.checkCardNumber(tmpCN)){
                 deleteUserTextArea.setText("Ton tai user");
-                if(sql.deleteID(tmpID)){
+                if(sql.deleteCN(tmpCN)){
                     JOptionPane.showMessageDialog(null, "Xoa thanh cong !", "Success",
                     JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -365,9 +368,9 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_deleteAccButActionPerformed
 
-    private void naptienIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naptienIDActionPerformed
+    private void naptienCardNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naptienCardNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_naptienIDActionPerformed
+    }//GEN-LAST:event_naptienCardNumberActionPerformed
 
     private void naptienShowUserInfoAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_naptienShowUserInfoAncestorAdded
         // TODO add your handling code here:
@@ -375,9 +378,9 @@ public class Main extends javax.swing.JFrame {
 
     private void naptienKiemTraButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naptienKiemTraButActionPerformed
         // TODO add your handling code here:
-        String tmp =naptienID.getText();
+        String tmp =naptienCardNumber.getText();
         if (!tmp.equals("")){
-            if( sql.checkID(tmp)){
+            if( sql.checkCardNumber(tmp)){
                 naptienShowUserInfo.setText(sql.getuserInfo(tmp));
             }
             else{
@@ -390,11 +393,11 @@ public class Main extends javax.swing.JFrame {
 
     private void naptienThucHienButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naptienThucHienButActionPerformed
         // TODO add your handling code here:
-        String tmpID = naptienID.getText();
+        String tmpCN = naptienCardNumber.getText();
         String tmpSoTien = naptienSoTien.getText();
-        BigDecimal soTienGui = new BigDecimal(tmpSoTien).add(sql.getBalance(tmpID));
+        BigDecimal soTienGui = new BigDecimal(tmpSoTien).add(sql.getBalance(tmpCN));
         System.out.print(soTienGui);
-        if (sql.updateBalance(tmpID, soTienGui)){
+        if (sql.updateBalance(tmpCN, soTienGui)){
              naptienShowUserInfo.setText("Thanh cong");
         }
         else{
@@ -439,13 +442,13 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CNDelete;
     private javax.swing.JButton ChangePassBut;
-    private javax.swing.JTextField changepassID;
+    private javax.swing.JTextField changepassCN;
     private javax.swing.JPasswordField changepassPin1;
     private javax.swing.JPasswordField changepassPin2;
     private javax.swing.JButton deleteAccBut;
     private javax.swing.JTextArea deleteUserTextArea;
-    private javax.swing.JTextField idDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -463,7 +466,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField naptienID;
+    private javax.swing.JTextField naptienCardNumber;
     private javax.swing.JButton naptienKiemTraBut;
     private javax.swing.JTextArea naptienShowUserInfo;
     private javax.swing.JTextField naptienSoTien;
