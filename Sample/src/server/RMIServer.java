@@ -3,11 +3,18 @@
 * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Server;
+package server;
 
+import bean.Account;
+import bean.Transaction;
+import java.math.BigDecimal;
 import java.io.File;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Date;
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 import javax.rmi.ssl.SslRMIServerSocketFactory;
 
@@ -17,7 +24,7 @@ import javax.rmi.ssl.SslRMIServerSocketFactory;
  */
 public class RMIServer {
 
-    public void init(RMIServer server) {
+    public void init() {
         String host = "localhost";
         try {
             setSettings();
@@ -29,14 +36,11 @@ public class RMIServer {
             registry.bind("bank", impl);
 
             System.out.println(">>>>>INFO: RMI Server started!!!!!!!!");
+
         } catch (Exception e) {
             e.printStackTrace();
 
         }
-    }
-
-    public static void main(String[] args) {
-        new RMIServer().init(new RMIServer());
     }
 
     private static void setSettings() {

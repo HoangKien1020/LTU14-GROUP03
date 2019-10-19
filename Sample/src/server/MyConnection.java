@@ -18,23 +18,18 @@ public class MyConnection {
 
     public static Connection getConnection() {
 
-        //String url = "jdbc:mysql://157.245.240.61/bank?user=group03&password=group03&useUnicode=true&characterEncoding=utf8";
-        String url = "jdbc:mysql://192.168.216.129/bank?user=root&password=1997&useUnicode=true&characterEncoding=utf8";
+        String url = "jdbc:mysql://157.245.240.61/bank?user=group03&password=group03&useUnicode=true&characterEncoding=utf8";
+//        String url = "jdbc:mysql://192.168.216.129/bank?user=root&password=1997&useUnicode=true&characterEncoding=utf8";
 
         Connection con = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             con = DriverManager.getConnection(url);
-            // System.out.println("Success");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error connect to Database -connection ");
         }
 
         return con;
-    }
-
-    public static void main(String[] args) {
-        getConnection();
     }
 
 }

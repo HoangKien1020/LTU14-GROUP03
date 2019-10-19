@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/HK/Documents/NetBeansProjects/Sample/src/server/Taotaikhoan.java</file>
-            <file>file:/C:/Users/HK/Documents/NetBeansProjects/Sample/src/server/Main.java</file>
-            <file>file:/C:/Users/HK/Documents/NetBeansProjects/Sample/src/server/CreatAccount.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/client/Withdraw.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/client/GUI.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/client/RMIClient.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/server/Main.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/server/MyConnection.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/client/ChangePass.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/server/RMIServer.java</file>
+            <file>file:/F:/Dev/Test/java-test/LTU14-GROUP03/Sample/src/server/BannImpl.java</file>
         </group>
     </open-files>
 </project-private>
