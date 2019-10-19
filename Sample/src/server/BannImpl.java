@@ -72,12 +72,82 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
 
     @Override
     public ArrayList<String> inquiry(String cardNo, int count) throws RemoteException, SQLException {
-        return null;
+        ArrayList<String> accountInquiry = new ArrayList<>();
+        try {
+            String sql = "select full_name,balance from Account where card_no=?";
+            PreparedStatement ps;
+            ps = server.MyConnection.getConnection().prepareStatement(sql);
+            ps.setString(1, cardNo);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                accountInquiry.add(rs.getString(1));
+                accountInquiry.add(rs.getString(2));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+        return accountInquiry;
     }
 
     @Override
     public ArrayList<String> transfer(String cardNo1, String cardNo2, BigDecimal amount, int count) throws RemoteException, SQLException {
-        return null;
+        ArrayList<String> code = new ArrayList<>();
+        String store = "Chuyển khoản thành công!";
+        Account acc1 = getAccount(cardNo1, count);
+        Account acc2 = getAccount(cardNo2, count);
+        if (amount.compareTo(new BigDecimal("50000")) == 0 || amount.compareTo(new BigDecimal("50000")) == 1) {
+
+            if (amount.compareTo(acc1.getBalance()) == 1) {
+                code.add("Lỗi,Số tiền lớn hơn số dư của bạn!");
+                // store = "Error,Amount is greater than your balance!";
+            } else {
+                if (!amount.remainder(new BigDecimal("5000")).equals(BigDecimal.ZERO)) {
+                    code.add("Lỗi,số tiền phải là bội của 5");
+                } else {
+                    BigDecimal balance1 = acc1.getBalance().subtract(amount);
+                    String sql = "update Account set balance =? where card_no =?";
+                    PreparedStatement ps;
+                    ps = server.MyConnection.getConnection().prepareStatement(sql);
+                    ps.setBigDecimal(1, balance1);
+                    ps.setString(2, cardNo1);
+                    ps.executeUpdate();
+
+                    BigDecimal balance2 = acc2.getBalance().add(amount);
+                    String sql2 = "update Account set balance =? where card_no =?";
+                    PreparedStatement ps2;
+                    ps = server.MyConnection.getConnection().prepareStatement(sql2);
+                    ps.setBigDecimal(1, balance2);
+                    ps.setString(2, cardNo2);
+                    ps.executeUpdate();
+                }
+            }
+
+        } else {
+            code.add("Lỗi,số tiền phải từ đủ 50.000VND!");
+        }
+
+        if (code.size() > 0) {
+
+            for (int i = 0; i < code.size(); i++) {
+                store = code.get(i);
+            }
+        }
+        //store history
+        PreparedStatement ps;
+        Calendar cal = Calendar.getInstance();
+        java.sql.Timestamp curent_Date = new java.sql.Timestamp(new java.util.Date().getTime());
+        String sqlhistory = "INSERT INTO History(card_no1,card_no2,type,money_no,tran_date,code) VALUES(?,?,?,?,?,?)";
+        ps = server.MyConnection.getConnection().prepareStatement(sqlhistory);
+        ps.setString(1, acc1.getCard_no());
+        ps.setString(2, acc2.getCard_no());
+        ps.setInt(3, 2);
+        ps.setBigDecimal(4, amount);
+        ps.setTimestamp(5, curent_Date, cal);
+        ps.setString(6, store);
+        ps.executeUpdate();
+        return code;
     }
 
     @Override

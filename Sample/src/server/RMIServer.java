@@ -34,7 +34,6 @@ public class RMIServer {
             Registry registry = LocateRegistry.getRegistry(host, 8888, new SslRMIClientSocketFactory());
 
             registry.bind("bank", impl);
-
             System.out.println(">>>>>INFO: RMI Server started!!!!!!!!");
 
         } catch (Exception e) {

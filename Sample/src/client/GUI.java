@@ -5,6 +5,13 @@
  */
 package client;
 
+import bean.Bank;
+import java.rmi.RemoteException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author HK
@@ -14,9 +21,16 @@ public class GUI extends javax.swing.JFrame {
     /**
      * Creates new form GUI
      */
+    private RMIClient client;
+    private String cardNo = "1234567890";
+
     public GUI() {
         initComponents();
         setLocationRelativeTo(null);
+        client = new RMIClient();
+        initComponents();
+        setLocationRelativeTo(null);
+
     }
 
     /**
@@ -120,8 +134,17 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btThoatActionPerformed
 
     private void btVantinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVantinActionPerformed
-        //
-        dispose();
+        try {
+            ArrayList<String> code;
+            code = client.getBank().inquiry(cardNo, ABORT);
+            for (int i = 0; i < code.size(); i++) {
+                System.out.println(code.get(i));
+            }
+            dispose();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
     }//GEN-LAST:event_btVantinActionPerformed
 
     private void btChangePwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChangePwActionPerformed
