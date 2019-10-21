@@ -77,4 +77,8 @@ public class Account implements Serializable {
         this.pin = pin;
         this.balance = balance;
     }
+
+    public Account() {
+    }
+
 }

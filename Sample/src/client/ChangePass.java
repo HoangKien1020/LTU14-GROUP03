@@ -19,8 +19,7 @@ import javax.swing.JOptionPane;
 public class ChangePass extends javax.swing.JFrame {
 
     private RMIClient client;
-    private int count = 3;
-    private String cardNo = "1234567890";
+    //private String cardNo = "1234567890";
 
     /**
      * Creates new form ChangePass
@@ -157,7 +156,7 @@ public class ChangePass extends javax.swing.JFrame {
         try {
             ArrayList<String> code;
             String codeshow = "";
-            code = client.getBank().changepass(cardNo, tfpwolld.getText(), "old", count);
+            code = client.getBank().changepass(Login.userInfo.get(0), tfpwolld.getText(), "old");
             if (code.size() > 0) {
                 for (int i = 0; i < code.size(); i++) {
                     codeshow = code.get(i) + "\n";
@@ -168,7 +167,7 @@ public class ChangePass extends javax.swing.JFrame {
 
                 ArrayList<String> error = validation(tfpwolld.getText(), tfpwnew.getText(), tfpwnewagain.getText());
                 if (error.isEmpty()) {
-                    client.getBank().changepass(cardNo, tfpwolld.getText(), tfpwnew.getText(), count);
+                    client.getBank().changepass(Login.userInfo.get(0), tfpwolld.getText(), tfpwnew.getText());
                     JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công", "Success",
                             JOptionPane.INFORMATION_MESSAGE);
                     reset();

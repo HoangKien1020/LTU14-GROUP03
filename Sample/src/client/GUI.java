@@ -120,7 +120,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btThoatActionPerformed
 
     private void btVantinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVantinActionPerformed
-        //
+        new Inquery().setVisible(true);
         dispose();
     }//GEN-LAST:event_btVantinActionPerformed
 
@@ -130,7 +130,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btChangePwActionPerformed
 
     private void btChuyenkhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btChuyenkhoanActionPerformed
-        //
+        new Transfer().setVisible(true);
         dispose();
     }//GEN-LAST:event_btChuyenkhoanActionPerformed
 

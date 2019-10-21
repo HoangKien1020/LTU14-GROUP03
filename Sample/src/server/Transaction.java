@@ -1,4 +1,6 @@
-package bean;
+package server;
+
+import java.math.BigDecimal;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,11 +16,11 @@ public class Transaction {
     private String card_no1;
     private String card_no2;
     private String type;
-    private int money_no;
+    private BigDecimal money_no;
     private String tran_date;
     private String code;
     
-    public Transaction(String card_no1, String card_no2, String type, int money_no, String tran_date, String code) {
+    public Transaction(String card_no1, String card_no2, String type, BigDecimal money_no, String tran_date, String code) {
         this.card_no1 = card_no1;
         this.card_no2 = card_no2;
         this.type = type;
@@ -51,11 +53,11 @@ public class Transaction {
         this.type = type;
     }
 
-    public int getMoney_no() {
+    public BigDecimal getMoney_no() {
         return money_no;
     }
 
-    public void setMoney_no(int money_no) {
+    public void setMoney_no(BigDecimal money_no) {
         this.money_no = money_no;
     }
 

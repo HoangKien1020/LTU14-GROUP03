@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package server;
+package Server;
 
 import bean.Bank;
 import bean.Account;
@@ -32,32 +32,27 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
     public BannImpl() throws RemoteException {
 
     }
+
     // Implementing the interface method 
-
     @Override
-    public String logintest(String cardNo, String PIN, int count) throws RemoteException {
-        /*
-        if (!cardNo.equals(NoCard)) {
-            return "Khong co ma the";
-        } else if (!PIN.equals(Passwd)) {
-            return "Nhap sai mat khau";
-        } else if (count <= this.count) {
-            return "Khong phat lai thong diep";
-        } else {
-            return "Dang nhap thanh cong";
+    public ArrayList<String> login(String cardNo, String PIN) throws RemoteException, SQLException {
+        ArrayList<String> userInfo = new ArrayList<>();
+        String sql = "select card_no from Account where card_no=?";
+        PreparedStatement ps;
+        ps = server.MyConnection.getConnection().prepareStatement(sql);
+        ps.setString(1, cardNo);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            if (checkpass(PIN, cardNo)) {
+                userInfo.add(cardNo);
+                return userInfo;
+            }
         }
-        
-         */
         return null;
     }
 
     @Override
-    public ArrayList<String> login(String cardNo, String PIN, int count) throws RemoteException, SQLException {
-        return null;
-    }
-
-    @Override
-    public Account getAccount(String cardNo, int count) throws RemoteException, SQLException {
+    public Account getAccount(String cardNo) throws RemoteException, SQLException {
         String sql = "select * from Account where card_no=?";
         PreparedStatement ps;
         ps = server.MyConnection.getConnection().prepareStatement(sql);
@@ -71,21 +66,102 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
     }
 
     @Override
-    public ArrayList<String> inquiry(String cardNo, int count) throws RemoteException, SQLException {
-        return null;
+    public ArrayList<String> inquiry(String cardNo) throws RemoteException, SQLException {
+        ArrayList<String> accountInquiry = new ArrayList<>();
+        try {
+            String sql = "select full_name,card_no from Account where card_no=?";
+            PreparedStatement ps;
+            ps = server.MyConnection.getConnection().prepareStatement(sql);
+            ps.setString(1, cardNo);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                accountInquiry.add(rs.getString(1));
+                accountInquiry.add(rs.getString(2));
+                // accountInquiry.add(rs.getString(3));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+        return accountInquiry;
     }
 
     @Override
-    public ArrayList<String> transfer(String cardNo1, String cardNo2, BigDecimal amount, int count) throws RemoteException, SQLException {
-        return null;
+    public ArrayList<String> transfer(String cardNo1, String cardNo2, BigDecimal amount) throws RemoteException, SQLException {
+        ArrayList<String> code = new ArrayList<>();
+        String store = "Chuyển khoản thành công!";
+        Account acc1 = getAccount(cardNo1);
+        Account acc2 = getAccount(cardNo2);
+        if (acc2 != null) {
+            if (acc2.getCard_no().equals(acc1.getCard_no())) {
+                store = "Bạn không thể chuyển khoản cho chính mình!";
+                code.add(store);
+            } else {
+                if (amount.compareTo(new BigDecimal("50000")) == 0 || amount.compareTo(new BigDecimal("50000")) == 1) {
+
+                    if (amount.compareTo(acc1.getBalance()) == 1) {
+                        code.add("Lỗi,Số tiền lớn hơn số dư của bạn!");
+                        // store = "Error,Amount is greater than your balance!";
+                    } else {
+                        if (!amount.remainder(new BigDecimal("5000")).equals(BigDecimal.ZERO)) {
+                            code.add("Lỗi,số tiền phải là bội của 5");
+                        } else {
+                            BigDecimal balance1 = acc1.getBalance().subtract(amount);
+                            String sql = "update Account set balance =? where card_no =?";
+                            PreparedStatement ps;
+                            ps = server.MyConnection.getConnection().prepareStatement(sql);
+                            ps.setBigDecimal(1, balance1);
+                            ps.setString(2, cardNo1);
+                            ps.executeUpdate();
+
+                            BigDecimal balance2 = acc2.getBalance().add(amount);
+                            String sql2 = "update Account set balance =? where card_no =?";
+                            PreparedStatement ps2;
+                            ps = server.MyConnection.getConnection().prepareStatement(sql2);
+                            ps.setBigDecimal(1, balance2);
+                            ps.setString(2, cardNo2);
+                            ps.executeUpdate();
+                        }
+                    }
+
+                } else {
+                    code.add("Lỗi,số tiền phải từ đủ 50.000VND!");
+                }
+
+                if (code.size() > 0) {
+
+                    for (int i = 0; i < code.size(); i++) {
+                        store = code.get(i);
+                    }
+                }
+            }
+        } else {
+            store = "Không tồn tại loại tài khoản này!";
+            code.add(store);
+        }
+        //store history
+        PreparedStatement ps;
+        Calendar cal = Calendar.getInstance();
+        java.sql.Timestamp curent_Date = new java.sql.Timestamp(new java.util.Date().getTime());
+        String sqlhistory = "INSERT INTO History(card_no1,card_no2,type,money_no,tran_date,code) VALUES(?,?,?,?,?,?)";
+        ps = server.MyConnection.getConnection().prepareStatement(sqlhistory);
+        ps.setString(1, cardNo1);
+        ps.setString(2, cardNo2);
+        ps.setInt(3, 2);
+        ps.setBigDecimal(4, amount);
+        ps.setTimestamp(5, curent_Date, cal);
+        ps.setString(6, store);
+        ps.executeUpdate();
+        return code;
     }
 
     @Override
-    public ArrayList<String> withdraw(String cardNo, BigDecimal amount, int count) throws RemoteException, SQLException {
+    public ArrayList<String> withdraw(String cardNo, BigDecimal amount) throws RemoteException, SQLException {
         //store code
         ArrayList<String> code = new ArrayList<>();
         String store = "Rút tiền thành công!";
-        Account acc = getAccount(cardNo, count);
+        Account acc = getAccount(cardNo);
         if (amount.compareTo(new BigDecimal("50000")) == 0 || amount.compareTo(new BigDecimal("50000")) == 1) {
 
             if (amount.compareTo(acc.getBalance()) == 1) {
@@ -165,7 +241,7 @@ public class BannImpl extends UnicastRemoteObject implements Bank {
     }
 
     @Override
-    public ArrayList<String> changepass(String cardNo, String oldpass, String newpass, int count) throws RemoteException, SQLException {
+    public ArrayList<String> changepass(String cardNo, String oldpass, String newpass) throws RemoteException, SQLException {
         ArrayList<String> code = new ArrayList<>();
         if (checkpass(oldpass, cardNo)) {
             if (!newpass.equals("old")) {
