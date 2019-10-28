@@ -5,8 +5,6 @@ Hướng dẫn cấu hình và cài đặt
 
 `git clone https://github.com/HoangKien1020/LTU14-GROUP03.git`
 
-`git checkout origin/khanhhh-ltu14`
-
 Sử dụng Netbeans IDE
 
 Stack: `Java RMI, Java SE, Java Swing, MySQL, Bcrypt`
