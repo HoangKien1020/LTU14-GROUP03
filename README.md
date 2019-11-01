@@ -2,6 +2,9 @@
 BTL: Hệ thống ATM kết nối trao đổi thông qua RMI
 
 # Hướng dẫn cách chạy chương trình
+Mở XHOST
+
+*xhost +*
 # Chạy phía server trước
 *docker pull hoangkien1020/ltu14_group03:atmserver*
 
