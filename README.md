@@ -50,7 +50,7 @@ Chạy trên netbeans
 # Chạy client 2
 Clone atm1:
 
-*docker commit <container ID atm1> ltu14_group03:atm2*
+*docker commit "container ID atm1" ltu14_group03:atm2*
 
 *docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atm2*
 
