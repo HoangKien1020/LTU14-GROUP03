@@ -1,5 +1,13 @@
 # LTU14-GROUP03
 BTL: Hệ thống ATM kết nối trao đổi thông qua RMI
-1. Login vào Bank
-Tải source code về, vào phần dist-> có phần .jar, chạy thực thi như hình:
-![Capture](https://user-images.githubusercontent.com/24661746/65829866-0ff26a00-e2d4-11e9-9fc2-52db91b6c8da.PNG)
+Hướng dẫn cách chạy chương trình
+# Chạy phía server trước
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atmserver /bin/bash
+./auto.sh
+Chạy trên netbeans
+# Chạy client 1
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atm1
+Chạy trên netbeans
+# Chạy client 2
+docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atm2
+Chạy trên netbeans
