@@ -2,6 +2,9 @@
 BTL: Hệ thống ATM kết nối trao đổi thông qua RMI
 # Đặc điểm của chương trình
 - Chương trình phân tán
+- Sử dụng ngôn ngữ lập trình Java										
+- Sử dụng JDBC kết nối cơ sở dữ liệu MySQL										
+- Phương pháp mã hóa mật khẩu(PIN) là Bcrypt										
 - Sử dụng docker
 - Sử dụng RMI
 - Truyền thông bảo mật bằng SSL
