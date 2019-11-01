@@ -1,6 +1,7 @@
 # LTU14-GROUP03
 BTL: Hệ thống ATM kết nối trao đổi thông qua RMI
-Hướng dẫn cách chạy chương trình
+
+# *Hướng dẫn cách chạy chương trình *
 # Chạy phía server trước
 docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atmserver /bin/bash
 
