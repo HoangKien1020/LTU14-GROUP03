@@ -33,6 +33,7 @@ Mở XHOST
 
 *xhost +*
 # Chạy phía server trước
+
 *docker pull hoangkien1020/ltu14_group03:atmserver*
 
 *docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atmserver /bin/bash*
@@ -41,10 +42,16 @@ Mở XHOST
 
 Chạy trên netbeans
 # Chạy client 1
+*docker push hoangkien1025/ltu14_group03:atm1*
+
 *docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atm1*
 
 Chạy trên netbeans
 # Chạy client 2
+Clone atm1:
+
+*docker commit <container ID atm1> ltu14_group03:atm2*
+
 *docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atm2*
 
 Chạy trên netbeans
