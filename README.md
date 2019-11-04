@@ -42,7 +42,7 @@ Mở XHOST
 
 Chạy trên netbeans
 # Chạy client 1
-*docker push hoangkien1025/ltu14_group03:atm1*
+*docker pull hoangkien1025/ltu14_group03:atm1*
 
 *docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix ltu14_group03:atm1*
 
